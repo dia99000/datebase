@@ -1,0 +1,25 @@
+<% @plans.each do |plan| %>
+  <div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <%= link_to plan do %>
+        <%= image_tag plan.image %>
+      <% end %>
+    </div>
+    <div class="card-content">
+        <h4>
+          <%= link_to plan.title, plan, class: 'waves-effect waves-light post-title' %>
+        </h4>
+      <p>予算　　：<%= plan.budget %> 円</p>
+      <p>所要時間：<%= plan.time %> 時間</p>
+      <p>@<%= link_to plan.user.username, "/users/#{plan.user_id}" %></p>
+      <p></p>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4"><%= plan.title %><i class="material-icons right">閉じる</i></span>
+      <p><%= plan.tmp %></p>
+    </div>
+  </div>
+<% end %>
+<div class="pagination-wrapper">
+  <%= paginate(@plans) %>
+</div>

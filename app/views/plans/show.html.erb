@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<h4>投稿詳細</h4>
+<div class="card">
+  <div class="card-image waves-effect waves-block waves-light">
+    <%= image_tag @plan.image %>
+  </div>
+  <p>
+    <strong>タイトル:</strong>
+    <%= @plan.title %>
+  </p>
+
+  <p>
+    <strong>予算:</strong>
+    <%= @plan.budget%> 円
+  </p>
+
+  <p>
+    <strong>所要時間:</strong>
+    <%= @plan.time %> 時間
+  </p>
+
+  <p>
+    <strong>Tmp:</strong>
+    <%= @plan.tmp %>
+  </p>
+  <p>
+    <% if user_signed_in? && current_user.id == @plan.user_id %>
+      <%= link_to '編集する', edit_plan_path(@plan), class: 'detail-btn' %>
+      <%= link_to '投稿を削除', "/plans/#{@plan.id}", method: :delete, data: {confirm: '投稿を削除しますか？'}, class: 'detail-btn' %>
+    <% end %>
+  </p>
+
+</div>
+
+<h4>レビューする</h4>
+
+<!-- reviewsコントローラのformを呼び出す -->
+<%= render 'reviews/form',  review: @review %>
+
+<h4>レビュー一覧</h4>
+<% @plan.reviews.each do |review| %>
+  <div class="card review-card">
+    <div class="card-content">
+        <p>
+          @<%= link_to review.user.username, "/users/#{review.user_id}" %>
+        </p>
+        <p>
+          <strong><%= review.rate %></strong>
+          <%= review.review %>
+        </p>
+    </div>
+  </div>
+<% end %>
+

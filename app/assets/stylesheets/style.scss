@@ -1,0 +1,147 @@
+/*
+colors
+#37AB9D
+#4DC0B2
+#FFC042
+#586365
+*/
+
+body{
+	color: #586365;
+}
+
+div {
+	display: block;
+}
+
+.header-fixed{
+  position: relative;
+  height: 56px;
+  z-index: 997;
+	background-color: #4DC0B2;
+}
+
+
+.header-wrapper{
+	background-color: #4DC0B2;
+	position: relative;
+  height: 100%;
+}
+
+.header-sec-wrapper{
+	background-color: #white;
+	margin-top: 10px;
+}
+
+.card{
+	height: 90%;
+	width: 90%;
+}
+
+.post-title{
+	font-weight: bold;
+	color: #586365;
+}
+
+.card review-card{
+	height: 80%;
+	width: 80%;
+}
+
+
+.header-btn{
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+	margin: 10px;
+	padding: 0 6px;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  letter-spacing: .5px;
+  height: 32.4px;
+  line-height: 32.4px;
+  font-size: 13px;
+  border-radius: 2px;
+
+}
+
+.header-btn:hover{
+
+	border-radius: 6px;
+  background-color: #37AB9D;
+}
+
+
+.post-btn{
+	font-weight: bold;
+	color: #fff;
+  background-color: #FFC042;
+}
+
+.signup-btn{
+	border: 2px solid #4DC0B2;
+	letter-spacing: 2;
+	padding-left: 20px;
+	padding-right: 20px;
+	font-weight: bold;
+	color: #4DC0B2;
+  background-color: #fff;
+}
+
+.signup-btn:hover{
+	color: #fff;
+	background-color: #4DC0B2;
+}
+
+.signin-btn{
+	color: #fff;
+  background-color: #4DC0B2;
+}
+
+.signout-btn{
+	color: #fff;
+  background-color: #4DC0B2;
+}
+
+.detail-btn{
+	margin: 10px;
+	padding: 0 6px;
+	color: #fff;
+  background-color: #FFC042;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  letter-spacing: .5px;
+  height: 32.4px;
+  line-height: 32.4px;
+  font-size: 13px;
+  border-radius: 2px;
+  opacity: 1;
+}
+
+.detail-btn:hover{
+	opacity: 0.8;
+	border-radius: 6px;
+}
+
+.pagination{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-size: 16px;
+	text-align: center;
+}
+
+.footer-wrapper{
+  padding-top: 20px;
+  color: #fff;
+	background-color: #37AB9D;
+}
+
+.footer-title{
+	letter-spacing: 0.25em;
+}
+
+.copyright{
+	text-align: center;
+	margin-top: 5px;
+	padding-bottom: 15px;
+}

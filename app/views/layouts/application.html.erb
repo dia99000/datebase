@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Datebase</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+   <!-- Compiled and minified CSS -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+      <!-- Compiled and minified JavaScript -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+  </head>
+
+  <body>
+    <div class="header-fixed">
+      <nav>
+        <div class="header-wrapper">
+          <%= link_to 'Date Base', plans_path, class: 'brand-logo' %>
+        </div>
+      </nav>
+    </div>
+
+  <div class="header-sec-wrapper">
+<!--     <ul> -->
+      <% if user_signed_in? %>
+<!--       <li> -->
+        <span><%= link_to '投稿する', new_plan_path, class: 'waves-effect waves-light header-btn post-btn'%></span>
+<!--       </li> -->
+<!--       <li> -->
+        <span><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'waves-effect waves-light header-btn signout-btn' %></span>
+<!--       </li> -->
+      <% else %>
+<!--       <li> -->
+        <%= link_to "ログイン", new_user_session_path, class: 'post waves-effect waves-light header-btn signin-btn' %>
+<!--       </li>
+      <li> -->
+        <%= link_to "アカウント作成", new_user_registration_path, class: 'post waves-effect waves-light header-btn signup-btn' %>
+<!--       </li> -->
+      <% end %>
+<!--     </ul> -->
+    </div>
+    <%= yield %>
+  </body>
+
+  <footer class="footer-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="footer-title">Date Base</h5>
+          <p>
+            catchy phrases
+          </p>
+          <p>explanations</p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5>プランを探す</h5>
+            <ul>
+              <li><a class="grey-text text-lighten-3" href="#!">観光地から探す</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">予算から探す</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">アクティビティから探す</a></li>
+            </ul>
+        </div>
+      </div>
+    </div>
+    <div class="copyright" >
+      © 2018 Copyright Datebase
+    </div>
+  </footer>
+</html>
