@@ -58,9 +58,15 @@ class PlansController < ApplicationController
   def destroy
     @plan.destroy
     respond_to do |format|
-      format.html { redirect_to plans_url, notice: 'Plan was successfully destroyed.' }
+      format.html { redirect_to plans_url, notice: 'プランを削除しました！' }
       format.json { head :no_content }
     end
+  end
+
+  def search
+    # @plans = Plan.where('title LIKE(?)', "%#{params[:keyword]}%").includes(:user).order(created_at: :desc).page(params[:page])
+    @plans = Plan.search_title(params[:keyword]).page(params[:page])
+    render 'plans/index'
   end
 
   private

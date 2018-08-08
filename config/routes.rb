@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   resources :plans do
   	resources :reviews, only: [:create, :update, :delete]
+    collection do
+      get :search
+    end
   	#/plans/:plan_id/reviews(.:format)
   	#Memo: 遷移先をplan_reviews_pathで指定
   end
