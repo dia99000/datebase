@@ -1,0 +1,12 @@
+<%= form_with(url: search_plans_path, method: :get, local: true) do |form| %>
+
+    <div class="field">
+      <%= form.label :search %>
+      <%= form.text_field :keyword %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit '検索' %>
+    </div>
+
+<% end %>
