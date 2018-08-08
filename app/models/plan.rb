@@ -5,11 +5,14 @@ class Plan < ApplicationRecord
 
 	paginates_per 5
 
-# 	def self.search(search)
-# 		if search #Controllerのパラメーターが空の時
-# 			Plan.where('title LIKE(?)', "%#{search}%").includes(:user).order(created_at: :desc).page(params[:page])
-# 		else
-# 			Plan.includes(:user).order(created_at: :desc).page(params[:page])
-# 		end
-# 	end
+	def self.search_title(keyword)
+		if keyword
+			Plan.where('title LIKE(?)', "%#{keyword}%")
+					.includes(:user)
+					.order(created_at: :desc)
+		else #Controllerのパラメーターが空の時
+			Plan.includes(:user)
+					.order(created_at: :desc)
+		end
+	end
 end

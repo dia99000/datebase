@@ -64,8 +64,8 @@ class PlansController < ApplicationController
   end
 
   def search
-    @plans = Plan.where('title LIKE(?)', "%#{params[:search]}%").includes(:user).order(created_at: :desc).page(params[:page])
-    # redirect_to "/plans/index"
+    # @plans = Plan.where('title LIKE(?)', "%#{params[:keyword]}%").includes(:user).order(created_at: :desc).page(params[:page])
+    @plans = Plan.search_title(params[:keyword]).page(params[:page])
     render 'plans/index'
   end
 
