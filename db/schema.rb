@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_04_094835) do
+ActiveRecord::Schema.define(version: 2018_08_08_133110) do
 
   create_table "examples", options: "ENGINE=MyISAM DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "ex1"
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 2018_08_04_094835) do
     t.text "review"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "star"
   end
 
   create_table "spots", options: "ENGINE=MyISAM DEFAULT CHARSET=utf8", force: :cascade do |t|

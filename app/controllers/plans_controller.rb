@@ -63,6 +63,12 @@ class PlansController < ApplicationController
     end
   end
 
+  def search
+    # @plans = Plan.where('title LIKE(?)', "%#{params[:keyword]}%").includes(:user).order(created_at: :desc).page(params[:page])
+    @plans = Plan.search_title(params[:keyword]).page(params[:page])
+    render 'plans/index'
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_plan

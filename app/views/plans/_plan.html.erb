@@ -12,12 +12,18 @@
       <p>予算　　：<%= plan.budget %> 円</p>
       <p>所要時間：<%= plan.time %> 時間</p>
       <p>@<%= link_to plan.user.username, "/users/#{plan.user_id}" %></p>
-      <p></p>
+      <p>
+        <% if user_signed_in? && current_user.id == plan.user_id %>
+          <%= link_to '編集する', edit_plan_path(plan), class: 'detail-btn' %>
+          <%= link_to '投稿を削除', "/plans/#{plan.id}", method: :delete, data: {confirm: '投稿を削除しますか？'}, class: 'detail-btn' %>
+        <% end %>
+      </p>
     </div>
     <div class="card-reveal">
       <span class="card-title grey-text text-darken-4"><%= plan.title %><i class="material-icons right">閉じる</i></span>
       <p><%= plan.tmp %></p>
     </div>
+
   </div>
 <% end %>
 <div class="pagination-wrapper">
